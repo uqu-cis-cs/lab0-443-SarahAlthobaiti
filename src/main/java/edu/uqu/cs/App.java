@@ -4,6 +4,9 @@ package edu.uqu.cs;
  * CS 1312
  */
 
+import javax.xml.transform.SourceLocator;
+import java.util.Scanner;
+
 /*
 * Make sure to complete and submit your lab
 */
@@ -21,8 +24,29 @@ public class App{
 * 
 * Output: 
 *        1 Tweetle 3 TweetleBeetle 5 TweetlePoodle 7 TweetleBeetle 9 Tweetle 11
-*        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
+*        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle
 */
+public static void twisters(){
+    for(int i = 1; i <= 110; i++){
+        if(i % 2 == 0){
+        System.out.print("Tweetle");
+        }
+        if(i % 4 == 0){
+            System.out.print("Beetle");
+        }
+        if(i % 6 == 0){
+            System.out.print("Poodle");
+        }
+    
+        else{
+            System.out.print(i);
+        }
+        
+    } 
+   
+
+
+}
 
 /**
 * Write a method named "phoneKeypad" that takes a string parameter (str)
@@ -42,6 +66,39 @@ public class App{
 * Output: 2255464228626
 *
 */
+public static void phoneKeypad(String str){
+    String num = "";
+    for (int i = 0; i < str.length(); i++) {
+        char letter = str.toUpperCase().charAt(i);
+        if(letter >= 'A' && letter <= 'C'){
+            num = "2";
+            System.out.print(num);
+        }else if(letter >= 'D' && letter <= 'F'){
+            num = "3";
+            System.out.print(num);
+        }else if(letter >= 'G' && letter <= 'I' ){
+            num = "4";
+            System.out.print(num);
+        }else if(letter >= 'J' && letter <= 'L'){
+            num = "5";
+            System.out.print(num);              
+        }else if(letter >= 'M' && letter <= 'O'){
+            num = "6";
+            System.out.print(num);
+        }else if(letter >= 'P' && letter <= 'S'){
+            num = "7";
+            System.out.print(num);
+        }else if(letter >= 'T' && letter <= 'V'){
+            num = "8";
+            System.out.print(num);
+        }else if(letter >= 'W' && letter <= 'Z'){
+            num = "9";
+            System.out.print(num);
+        }
+        
+    }
+
+}
  
     public static void main(String [] args) {
         
@@ -49,8 +106,15 @@ public class App{
         /* Write your code here */
      
        //call method twisters()
+       twisters();
        //prompt user to enter a string 
+       Scanner scnr = new Scanner(System.in);
+       System.out.println("Enter a string to convert it to numbers");
+       String str = scnr.nextLine();
+       
+
        //call method phoneKeypad(string)
+       phoneKeypad(str);
 
 
     }
